@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pay</title>
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+	
+  <!--
+	<h2>please state the amount and your email to donate</h2>
+	<form >
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <input type="email" name="email" id="email" placeholder="your email">
+  <input type="text" name="payment" id="payment" placeholder="amount">
+  <button type="button" onclick="payWithPaystack()"> Pay </button> 
+</form>
+ 
+<script>
+  function payWithPaystack(){
+    var handler = PaystackPop.setup({
+      key: 'pk_test_c0ab4140280c13d3caaa728e448aeeaee6eec75f',
+      email: $('#email').val(),
+      amount:($('#payment').val() * 100),
+      currency: "NGN",
+      ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      metadata: {
+         custom_fields: [
+            {
+                display_name: "Mobile Number",
+                variable_name: "mobile_number",
+                value: "+2348012345678"
+            }
+         ]
+      },
+      callback: function(response){
+          alert('success. transaction ref is ' + response.reference);
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();
+  }
+</script>-->
+<form method="post" action="php/initialize.php">
+		<label for="payment">Please Contribute(the currency is naira)</label>
+		<input type="text" name="payment">
+		<button type="submit">Donate</button>
+  </form>
+</body>
+
+</html>
